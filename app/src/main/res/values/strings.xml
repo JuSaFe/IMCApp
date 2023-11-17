@@ -6,4 +6,14 @@
     <string name="weight">PESO</string>
     <string name="age">EDAD</string>
     <string name="calcular">CALCULAR</string>
+    <string name="obesidad">Obesidad</string>
+    <string name="textoObesidad">Estás por encima de lo óptimo para tu peso y altura.</string>
+    <string name="superior">Sobrepeso</string>
+    <string name="textoSuperior">Estás algo por encima de lo óptimo para tu peso y altura.</string>
+    <string name="normal">Normal</string>
+    <string name="textoNormal">Estás en lo óptimo para tu peso y altura.</string>
+    <string name="bajopeso">Bajopeso</string>
+    <string name="textoBajoPeso">Estás por debajo de lo óptimo para tu peso y altura.</string>
+    <string name="error">Error</string>
+    <string name="textoError">Te pasaste las leyes de la física crack</string>
 </resources>

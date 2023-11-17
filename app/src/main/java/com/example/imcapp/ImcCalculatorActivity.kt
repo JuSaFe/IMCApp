@@ -1,5 +1,6 @@
 package com.example.imcapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -27,6 +28,8 @@ private lateinit var calcularButton: AppCompatButton
 private var isMaleSelected:Boolean = true
 private var weight:Int = 40
 private var age:Int = 12
+private var tituloPeso: String = ""
+private var textoPeso: String = ""
 
 class ImcCalculatorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -126,10 +129,44 @@ class ImcCalculatorActivity : AppCompatActivity() {
     }
 
     private fun calculateIMC(): Double {
+        var peso: Double = viewWeight.text.toString().toDouble()
+        var altura: Double = tviewHeight.text.toString().toDouble()
 
+        altura = (altura / 100)
+        altura = altura * altura
+        val resultado: Double = peso / altura
+
+        when(resultado) {
+            in 0.0..18.5 -> {
+                tituloPeso = getString(R.string.bajopeso)
+                textoPeso = getString(R.string.textoBajoPeso)
+            }
+            in 18.6..24.9 -> {
+                tituloPeso = getString(R.string.normal)
+                textoPeso = getString(R.string.textoNormal)
+            }
+            in 25.0..29.9 -> {
+                tituloPeso = getString(R.string.superior)
+                textoPeso = getString(R.string.textoSuperior)
+            }
+            in 30.0..Double.MAX_VALUE -> {
+                tituloPeso = getString(R.string.obesidad)
+                textoPeso = getString(R.string.textoObesidad)
+            }
+
+            else -> {
+                tituloPeso = getString(R.string.error)
+                textoPeso = getString(R.string.textoError)
+            }
+        }
+        return resultado
     }
 
     private fun navigate2result(resultado: Double) {
-
+        val intentImcResult = Intent(this, ImcResultActivity::class.java)
+        intentImcResult.putExtra("Título", tituloPeso)
+        intentImcResult.putExtra("Descripción", textoPeso)
+        intentImcResult.putExtra("Resultado", resultado)
+        startActivity(intentImcResult)
     }
 }
