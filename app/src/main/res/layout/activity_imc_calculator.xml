@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,6 +10,7 @@
     android:paddingVertical="32dp"
     android:background="@color/bg_app">
 
+    <!--CardView of Men-->
     <androidx.cardview.widget.CardView
         android:id="@+id/viewMale"
         android:layout_width="150dp"
@@ -33,12 +35,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/title_text"
+                android:textColor="@color/text"
                 android:text="@string/male">
             </TextView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!--CardView of Women-->
     <androidx.cardview.widget.CardView
         android:id="@+id/viewFemale"
         android:layout_width="150dp"
@@ -63,10 +66,181 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/title_text"
+                android:textColor="@color/text"
                 android:text="@string/female">
             </TextView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!--CardView of Height-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/viewHeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/bg_comp_slider"
+        app:cardCornerRadius="16dp"
+        app:layout_goneMarginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/viewMale"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/height"
+                android:textColor="@color/title_text">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textviewHeight"
+                android:text="120cm"
+                android:textSize="38sp"
+                android:textStyle="bold"
+                android:textColor="@color/text">
+            </TextView>
+            <com.google.android.material.slider.RangeSlider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rangesliderHeight"
+                android:contentDescription="@string/height"
+                android:stepSize="1"
+                android:valueFrom="120"
+                android:valueTo="200">
+            </com.google.android.material.slider.RangeSlider>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--CardView of Weight-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/viewWeight"
+        android:layout_width="150dp"
+        android:layout_height="160dp"
+        app:cardBackgroundColor="@color/bg_comp_components"
+        app:cardCornerRadius="16dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/viewHeight"
+        app:layout_constraintEnd_toEndOf="@id/viewMale">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/title_text"
+                android:text="@string/weight">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textviewWeight"
+                android:text="40"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/text">
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnLessWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="@color/bg_button"
+                    app:tint="@color/text"
+                    android:src="@drawable/baseline_neg"
+                    android:layout_marginEnd="16dp"/>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnMoreWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="@color/bg_button"
+                    app:tint="@color/text"
+                    android:src="@drawable/baseline_plus"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--CardView of Age-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/viewAge"
+        android:layout_width="150dp"
+        android:layout_height="160dp"
+        app:cardBackgroundColor="@color/bg_comp_components"
+        app:cardCornerRadius="16dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/viewHeight"
+        app:layout_constraintStart_toStartOf="@id/viewFemale">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/title_text"
+                android:text="@string/age">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textviewAge"
+                android:text="12"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/text">
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnLessAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="@color/bg_button"
+                    app:tint="@color/text"
+                    android:src="@drawable/baseline_neg"
+                    android:layout_marginEnd="16dp"/>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnMoreAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="@color/bg_button"
+                    app:tint="@color/text"
+                    android:src="@drawable/baseline_plus"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--AppCompatButtom of Calcular-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="@string/calcular"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:background="@color/bg_button"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintTop_toBottomOf="@id/viewWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </androidx.appcompat.widget.AppCompatButton>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,4 +2,8 @@
     <string name="app_name">IMCApp</string>
     <string name="male">HOMBRE</string>
     <string name="female">MUJER</string>
+    <string name="height">ALTURA</string>
+    <string name="weight">PESO</string>
+    <string name="age">EDAD</string>
+    <string name="calcular">CALCULAR</string>
 </resources>
