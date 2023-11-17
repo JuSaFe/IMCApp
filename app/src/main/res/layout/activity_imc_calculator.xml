@@ -101,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textviewHeight"
-                android:text="120cm"
+                android:text="120"
                 android:textSize="38sp"
                 android:textStyle="bold"
                 android:textColor="@color/text">

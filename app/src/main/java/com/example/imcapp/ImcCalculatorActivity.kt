@@ -62,7 +62,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
             setGenderColor()
         }
         rSliderHeight.addOnChangeListener{ _, value, _ ->
-            tviewHeight.text = DecimalFormat("#.##").format(value) + "cm"
+            tviewHeight.text = DecimalFormat("#.##").format(value)
         }
 
         plusButtonWeight.setOnClickListener {
@@ -170,7 +170,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
         val intentImcResult = Intent(this, ImcResultActivity::class.java)
         intentImcResult.putExtra("Título", tituloPeso)
         intentImcResult.putExtra("Descripción", textoPeso)
-        intentImcResult.putExtra("Resultado", resultado)
+        intentImcResult.putExtra("Resultado", res)
         startActivity(intentImcResult)
     }
 }
